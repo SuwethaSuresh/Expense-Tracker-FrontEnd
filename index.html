@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Expense Tracker</h1>
+            <p>Track and manage your daily expenses</p>
+        </header>
+
+        <!-- Summary Cards -->
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="total-expense">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Transactions</h3>
+                <p id="transaction-count">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Today's Expense</h3>
+                <p id="today-expense">₹0</p>
+            </div>
+
+        </section>
+
+        <!-- Add Expense -->
+        <section class="expense-form">
+
+            <h2>Add Expense</h2>
+
+            <form id="expense-form">
+
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter amount"
+                        min="1"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Education">Education</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Add Expense</button>
+
+            </form>
+
+        </section>
+
+        <!-- Expense List -->
+        <section class="expense-list">
+
+            <div class="section-header">
+                <h2>Recent Expenses</h2>
+
+                <select id="filter-category">
+                    <option value="All">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="expense-table">
+
+                    <!-- Expenses will appear here -->
+
+                </tbody>
+
+            </table>
+
+            <p id="empty-message">
+                No expenses found.
+            </p>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
